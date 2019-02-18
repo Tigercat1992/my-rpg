@@ -1,0 +1,5 @@
+.viewport-container {
+  position: relative;
+  overflow: hidden;
+  background: grey;
+}

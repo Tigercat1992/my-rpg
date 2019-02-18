@@ -1,28 +1,30 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+//import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+import Viewport from './components/viewport';
+import GameWorld from './features/gameWorld';
+import useWindowSize from './modules/useWindowSize';
+import resizeScreen from './modules/resizeScreen';
+
+
+const App = (props) => {
+	//const { gameMode } = props.world;
+  const { resizeWidth, resizeHeight } = resizeScreen(useWindowSize());
+
+	// disable scrolling of the page
+  // prevents iOS Safari bouncing during movement
+  // useEffect(() => {
+  //   disableBodyScroll(document.getElementById('root'));
+  //   return clearAllBodyScrollLocks;
+  // }, []);
+
+  return (
+    <div>
+      <Viewport width={resizeWidth} height={resizeHeight}>
+        <GameWorld />
+      </Viewport>
+    </div>
+  );
 }
 
 export default App;
