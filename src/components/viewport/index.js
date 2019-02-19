@@ -11,8 +11,8 @@ const Viewport = (props) => {
 
   let { width, height } = props;
   if(VIEWPORT_MIN_SIZE > width) {
-    width = GAME_VIEWPORT_MIN_SIZE;
-    height = Math.round(GAME_VIEWPORT_MIN_SIZE / SCREEN_DIMENSION_HELPER)
+    width = VIEWPORT_MIN_SIZE;
+    height = Math.round(VIEWPORT_MIN_SIZE / SCREEN_DIMENSION_HELPER)
   }
 
   const styles = { width, height };

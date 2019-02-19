@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 //import { disableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 import Viewport from './components/viewport';
-import GameWorld from './features/gameWorld';
+import World from './features/world';
 import useWindowSize from './modules/useWindowSize';
 import resizeScreen from './modules/resizeScreen';
-
 
 const App = (props) => {
 	//const { gameMode } = props.world;
@@ -21,7 +20,7 @@ const App = (props) => {
   return (
     <div>
       <Viewport width={resizeWidth} height={resizeHeight}>
-        <GameWorld />
+        <World />
       </Viewport>
     </div>
   );
